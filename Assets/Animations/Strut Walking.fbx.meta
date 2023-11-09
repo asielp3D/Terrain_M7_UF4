@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e17d37af8a1d2a743a22191e0be4b33b
+guid: 44a17445ad81bc44dbaba727959be79c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk alante
+      name: xinocamina
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 41
+      lastFrame: 43
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

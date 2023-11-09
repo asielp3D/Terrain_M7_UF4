@@ -18,6 +18,7 @@ public class TPSController : MonoBehaviour
     private float _gravity = -9.81f;
     private Vector3 _playerGravity;
 
+    TPSController _script;
 
 
     //variables para rotacion
@@ -43,6 +44,8 @@ public class TPSController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _animator = GetComponentInChildren<Animator>();
         _camera = Camera.main.transform;
+        _script = GetComponent<TPSController>();
+
     }
 
     // Update is called once per frame
@@ -129,5 +132,13 @@ public class TPSController : MonoBehaviour
         _playerGravity.y += _gravity * Time.deltaTime;
 
         _controller.Move(_playerGravity * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider deathCollider)
+    {
+        if(deathCollider.gameObject.layer == 7)
+        {
+            _script.enabled = false;
+        }
     }
 }
