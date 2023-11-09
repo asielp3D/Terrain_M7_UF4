@@ -134,11 +134,11 @@ public class TPSController : MonoBehaviour
         _controller.Move(_playerGravity * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider deathCollider)
+    void OnCollisionEnter(Collision deathCollider)
     {
         if(deathCollider.gameObject.layer == 7)
         {
-            _script.enabled = false;
+            _script.enabled = !_script.enabled;
         }
     }
 }
