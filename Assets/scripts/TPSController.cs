@@ -141,6 +141,7 @@ public class TPSController : MonoBehaviour
         if(deathCollider.gameObject.layer == 7)
         {
             _script.enabled = false;
+            _animator.SetBool("Death" , true);
 
         }
     }
