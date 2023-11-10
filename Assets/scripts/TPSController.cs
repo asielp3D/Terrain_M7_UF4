@@ -122,23 +122,26 @@ public class TPSController : MonoBehaviour
 
         if(_isGrounded && _playerGravity.y < 0)
         {
-            _playerGravity.y =0;
+            _playerGravity.y = -4;
+            _animator.SetBool("Jump" , false);
         }
         
          if(_isGrounded && Input.GetButtonDown("Jump"))
         {
             _playerGravity.y = Mathf.Sqrt(_jumpHeight * -2 * _gravity);
+            _animator.SetBool("Jump" , true);
         }
         _playerGravity.y += _gravity * Time.deltaTime;
 
         _controller.Move(_playerGravity * Time.deltaTime);
     }
 
-    void OnCollisionEnter(Collision deathCollider)
+    void OnTriggerEnter(Collider deathCollider)
     {
         if(deathCollider.gameObject.layer == 7)
         {
-            _script.enabled = !_script.enabled;
+            _script.enabled = false;
+
         }
     }
 }
